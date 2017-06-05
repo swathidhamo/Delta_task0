@@ -7,102 +7,25 @@
   <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
-  <style type="text/css">
-    body {
-      background:url(http://subtlepatterns.com/patterns/little_pluses.png) #cacaca;
-       margin:30px; 
-     }
 
-  textarea  { 
-
-  display: block;
-  /*ng:25px 25px 40px;*/
-  padding-top: 30px;
-  font-size: 20px;
-  padding-left: 30px;
-  margin:10px auto 20px auto;
-  width:250px;
-  height:250px;   
-  line-height:1.5;
-  border:0;
-  border-radius: 3px;
-  font-family: 'Satisfy', cursive;
- 
-}
-
-
-     .page-header{
-       border: 2px solid black;
-       background-color: green;
-     }
-  
-   
-     #title{
-      padding-top: 20px;
-      padding-bottom: 15px;
-      padding-left: 580px;
-      font-family: 'Handlee', cursive;
-      font-size: 15px;
-
-
-     }
-     .one{
-      background-color: #FFBD33;
-     }
-     .two{
-      background-color: #DBFF33;
-     }
-     .three{
-      background-color: #4ff977;
-     }
-
-     .delbtn0{
-
-     padding-left: 10px;
-     padding-right: 10px;
-     position: relative;
-     margin-left: 320px;
-     margin-top: 5px;
-     background-color: red;
-     }
-     
-     #new{
-          border: 2 px, solid black;
-          background-color: green;
-          font-color: white;
-          padding right: 850 px;
-          padding top: 50px px;
-      position: absolute;
-     }
-     #clear{
-      margin-left: 300px;
-     }
-  </style>
-<meta name = "viewport" content= "width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content = "IE=edge,chrome=1">
 <meta name = "HandheldFriendly" content = "true">
 </head>
 <body>
-  <div class= "page-header">
-    <div id = "title">Webpage for notes </div>
-    <button id = "sort" onclick = "sort()">Sort</button>
-    <button id = "new" onclick ="newText()">NEW</button>
-
+   <div class= "page-header">
+     <div id = "title">Webpage for notes </div>
+     <button id = "sort" onclick = "sort()">Sort</button>
+     <button id = "new" onclick ="newText()">NEW</button>
 
     
-  </div>
+   </div>
 
    <div id = "workspace">
      
-  </div>
-
+   </div>
   
- 
-
   <script type="text/javascript">
-
-                          
-
+                         
  //localStorage.clear();
   var sortnum = 0;
        // var titles = new Array();
@@ -148,19 +71,18 @@
               var colors  = "colors" + i;//for priorities for local storage
               var info;
               var priorities;
-              var ipo = "prio_btn"+i;
-              var deles = "del_btn" + i;
+            //  var ipo = "prio_btn"+i;
+            //  var deles = "del_btn"+i;             
               var delet = "delet" +i;
               
-
             
         
                        //for a new note
                        var newTitle = document.createElement('textarea');
-                       newTitle.setAttribute("placeholder",name);
-                       newTitle.setAttribute("id",name);
-                       newTitle.setAttribute("rows","20px");
-                       newTitle.setAttribute("cols","50px");
+                              newTitle.setAttribute("placeholder",name);
+                              newTitle.setAttribute("id",name);
+                              newTitle.setAttribute("rows","20px");
+                              newTitle.setAttribute("cols","50px");
                        var workSpace = document.getElementById("workspace");
                        newTitle.addEventListener("change",function(){
                          localStorage.setItem(name,newTitle.value)
@@ -172,17 +94,16 @@
                        workSpace.appendChild(newTitle);
                          //to create the delete button
                               var op = document.createElement('input');
-                              op.setAttribute("type","submit");
-                              op.setAttribute("value", "Delete");
-                              op.setAttribute("id",del);
+                                op.setAttribute("type","submit");
+                                op.setAttribute("value", "Delete");
+                                op.setAttribute("id",del);
                               dels.push(del);
                               workSpace.appendChild(op);
                                op.addEventListener("click", function() {  
-                                      
-                                                                              
-                                  var btn = document.getElementById(name);
-                                  var omit = document.getElementById(del);
-                                  var u = document.getElementById(sel);
+                                                                                                                    
+                                var btn = document.getElementById(name);
+                                var omit = document.getElementById(del);
+                                var u = document.getElementById(sel);
                                   //var y = document.getElementById(head);
                                    // y.style.display = "none";
                                     omit.style.display = "none";
@@ -192,11 +113,7 @@
                                     localStorage.setItem(colors,"");
                                     localStorage.removeItem(name);
                                     localStorage.removeItem(colors);
-
                                     localStorage.setItem(delet,"hi"); 
-
-
-                                    
                                     clearInterval(po);
                                   
                                     // localStorage.clear(name);
@@ -204,84 +121,84 @@
                                 });
 
 
-                       //to create the priority buttons
-                       var select = document.createElement("select");
-                       select.setAttribute("id",sel);
-                          var op1 = document.createElement("option");
-                          var op2 = document.createElement("option");
-                          var op3 = document.createElement("option");
-                          op1.value = "1";
-                          op2.value = "2";
-                          op3.value = "3";
-                          op1.text = "High";
-                          op2.text = "Medium";
-                          op3.text = "Low";
-                          workSpace.appendChild(select);
-                          prio.push(sel);
-                          select.appendChild(op1);
-                          select.appendChild(op2);
-                          select.appendChild(op3);
-                          select.addEventListener("change",function(){
-                          localStorage.setItem(colors,document.getElementById(sel).value);
-                          });
+                               //to create the priority options
+                               var select = document.createElement("select");
+                               select.setAttribute("id",sel);
+                               var op1 = document.createElement("option");
+                               var op2 = document.createElement("option");
+                               var op3 = document.createElement("option");
+                                   op1.value = "1";
+                                   op2.value = "2";
+                                   op3.value = "3";
+                                   op1.text = "High";
+                                   op2.text = "Medium";
+                                   op3.text = "Low";
+                              workSpace.appendChild(select);
+                              prio.push(sel);
+                                 select.appendChild(op1);
+                                 select.appendChild(op2);
+                                 select.appendChild(op3);
+                                 select.addEventListener("change",function(){
+                                localStorage.setItem(colors,document.getElementById(sel).value);
+                                });
                           
                         
-                           select.addEventListener("change",function(){                         
-                            var w = document.getElementById(name); 
-                            //var c = document.getElementById(head);
-                            var d = document.getElementById(sel);
-                            var k = document.getElementById(del);
-                            //localStorage.setItem(colors,select.value);
-                            select.value = localStorage.getItem(colors);
+                              select.addEventListener("change",function(){                         
+                               var w = document.getElementById(name); 
+                               //var c = document.getElementById(head);
+                               var d = document.getElementById(sel);
+                               var k = document.getElementById(del);
+                               //localStorage.setItem(colors,select.value);
+                               select.value = localStorage.getItem(colors);
                       
-                            if(select.value === "1")
-                              {
-                                w.className = "one";
-                                //c.className = "a1";
-                                d.className = "a2";
-                                k.className = "a3";
-                              
-                              }
-                            if(select.value === "2")
-                             {
-                               w.className = "two";
-                               //c.className = "b1";
-                               d.className = "b2";
-                               k.className = "b3";
-                              
-                              }
-                            if(select.value === "3")
-                             {
-                                 w.className = "three";
-                                // c.className = "c1";
-                                 d.className = "c2";
-                                 k.className = "c3";
+                               if(select.value === "1")
+                                 {
+                                   w.className = "one";
+                                   //c.className = "a1";
+                                   d.className = "a2";
+                                   k.className = "a3";
                                  
-                              }
-                           });
+                                 }
+                                 if(select.value === "2")
+                                  {
+                                    w.className = "two";
+                                    //c.className = "b1";
+                                    d.className = "b2";
+                                    k.className = "b3";
+                                   
+                                   }
+                                 if(select.value === "3")
+                                  {
+                                      w.className = "three";
+                                     // c.className = "c1";
+                                      d.className = "c2";
+                                      k.className = "c3";
+                                      
+                                   }
+                                 });
                  
-                            select.value = localStorage.getItem(colors);
-                            var w = document.getElementById(name); 
-                          //  var c = document.getElementById(head);
-                            var d = document.getElementById(sel);
-                            var k = document.getElementById(del);
-                        if(localStorage.getItem(colors)==="1")
-                        {
-                                w.className = "one";
-                                //c.className = "a1";
-                                d.className = "a2";
-                                k.className = "a3";
-                        }
-                        if(localStorage.getItem(colors)==="2")
-                          {
-                               w.className = "two";
-                              // c.className = "b1";
-                               d.className = "b2";
-                               k.className = "b3";
-                
+                                  select.value = localStorage.getItem(colors);
+                                  var w = document.getElementById(name); 
+                                //  var c = document.getElementById(head);
+                                  var d = document.getElementById(sel);
+                                  var k = document.getElementById(del);
+                              if(localStorage.getItem(colors)==="1")
+                                 {
+                                   w.className = "one";
+                                   //c.className = "a1";
+                                   d.className = "a2";
+                                   k.className = "a3";
                               }
-                        if(localStorage.getItem(colors)==="3")
-                           {
+                             if(localStorage.getItem(colors)==="2")
+                             {
+                                 w.className = "two";
+                                // c.className = "b1";
+                                 d.className = "b2";
+                                 k.className = "b3";
+                  
+                              }
+                             if(localStorage.getItem(colors)==="3")
+                            {
                                  w.className = "three";
                                 // c.className = "c1";
                                  d.className = "c2";
