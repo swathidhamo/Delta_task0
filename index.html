@@ -28,6 +28,8 @@
 
   
  
+  
+ 
 
   <script type="text/javascript">
 
@@ -92,6 +94,12 @@
                        newTitle.setAttribute("rows","20px");
                        newTitle.setAttribute("cols","50px");
                        var workSpace = document.getElementById("workspace");
+                       newTitle.addEventListener("change",function(){
+                         localStorage.setItem(name,newTitle.value)
+
+                       })
+                       newTitle.value = localStorage.getItem(name);
+
                        texts.push(name);
                        workSpace.appendChild(newTitle);
 
@@ -122,7 +130,7 @@
                         
                          var po = setInterval(function() {
                          info = JSON.stringify(newTitle);
-                         localStorage.setItem(name, document.getElementById(name).value);
+                         //localStorage.setItem(name, document.getElementById(name).value);
                          localStorage.setItem(structure,info);
                          localStorage.setItem(colors,document.getElementById(sel).value);
                          localStorage.setItem(sortn,sortnum);
@@ -131,7 +139,7 @@
 
                          localStorage.setItem(ij,i);
                          }, 1500);
-                          document.getElementById(name).value = localStorage.getItem(name);
+                        //  document.getElementById(name).value = localStorage.getItem(name);
 
 
                        //to create the delete button
