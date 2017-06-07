@@ -1,22 +1,22 @@
 <html>
-<head>
+ <head>
      <title>Note making webpage</title>
      <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
 
-<meta http-equiv="X-UA-Compatible" content = "IE=edge,chrome=1">
-<meta name = "HandheldFriendly" content = "true">
-</head>
-<body>
+  <meta http-equiv="X-UA-Compatible" content = "IE=edge,chrome=1">
+  <meta name = "HandheldFriendly" content = "true">
+ </head>
+ <body>
    <div class= "page-header">
      <div id = "title">Webpage for notes </div>
    </div>     
-     <button id = "sort" onclick = "sort()">Sort</button>
-     <button id = "new" onclick ="newText()">NEW</button>
+    <button id = "sort" onclick = "sort()">Sort</button>
+    <button id = "new" onclick ="newText()">NEW</button>
 
    <div id = "workspace">
      
@@ -24,8 +24,8 @@
   
    <script type="text/javascript">
                          
- //localStorage.clear();
-  var sortnum = 0;
+       //localStorage.clear();
+       var sortnum = 0;
        // var titles = new Array();
        var texts = new Array();
        var dels = new Array();
@@ -37,7 +37,8 @@
        var structure = "structure" + i;
        var sortn;
        var t=0;
-       var name = "Text" + i;//Id's for notes
+        //names for ID's for the elements
+              var name = "Text" + i;//Id's for notes
               var del = "delbtn" + i;//Id's for delete buttons
               var head = "note" + i;//Id's for priority buttons
               var sel = "Select" + i;//Id's for select options
@@ -73,7 +74,7 @@
               
             
         
-                       //for a new note
+                       //for a new note, textarea with id as name is created
                        var newTitle = document.createElement('textarea');
                               newTitle.setAttribute("placeholder",name);
                               newTitle.setAttribute("id",name);
@@ -86,8 +87,8 @@
                        newTitle.value = localStorage.getItem(name);
                        texts.push(name);
                        workSpace.appendChild(newTitle);
-                         //to create the delete button
-                              var op = document.createElement('input');
+                         //to create the delete button with id as del
+                       var op = document.createElement('input');
                                 op.setAttribute("type","submit");
                                 op.setAttribute("value", "Delete");
                                 op.setAttribute("id",del);
@@ -106,13 +107,13 @@
                                     localStorage.setItem(colors,"");
                                     localStorage.removeItem(name);
                                     localStorage.removeItem(colors);
-                                    localStorage.setItem(delet,"hi"); 
+                                    localStorage.setItem(delet,"deleted"); //so that this note is not created when the page is reloaded
                                     clearInterval(po);
                                   
                                     // localStorage.clear(name);
                                      //localStorage.setItem(deletebtn,i);
                                 });
-                               //to create the priority options
+                               //to create the priority options high,medium and low with id as sel
                                var select = document.createElement("select");
                                select.setAttribute("id",sel);
                                var op1 = document.createElement("option");
@@ -143,24 +144,21 @@
                       
                                 if(select.value === "1")
                                  {
-                                   w.className = "one";
-      
-                                  d.className = "a2";
+                                   w.className = "one";      
+                                   d.className = "a2";
                                    k.className = "a3";
                                  
                                  }
                                  if(select.value === "2")
                                   {
-                                    w.className = "two";
-      
+                                    w.className = "two";      
                                     d.className = "b2";
                                     k.className = "b3";
                                    
                                    }
                                  if(select.value === "3")
                                   {
-                                      w.className = "three";
-            
+                                      w.className = "three";            
                                       d.className = "c2";
                                       k.className = "c3";
                                       
@@ -176,24 +174,22 @@
                                    w.className = "one";
                                    d.className = "a2";
                                    k.className = "a3";
-                              }
+                                 }
                              if(localStorage.getItem(colors)==="2")
                              {
                                  w.className = "two";
                                  d.className = "b2";
                                  k.className = "b3";
-                  
                               }
                              if(localStorage.getItem(colors)==="3")
-                            {
+                             {
                                  w.className = "three";
                                  d.className = "c2";
                                  k.className = "c3";
-                  
                               }   
                               //localStorage.setItem(ij,i);  
                             
-                              if(localStorage.getItem(delet)==="hi")
+                              if(localStorage.getItem(delet)==="deleted")
                               {
                                   var btn = document.getElementById(name);
                                   var omit = document.getElementById(del);
@@ -224,11 +220,11 @@
                i++;
               // localStorage.setItem(ij,i);
      } 
-                     //for the sorting
+                     //for the sorting when the button is clicked
       
                         var m,n,r,s,temp=0;
            
-                 var workSpace = document.getElementById("workspace"); 
+                    var workSpace = document.getElementById("workspace"); 
                     function sort() {
                   
                        high = document.querySelectorAll(".one");
@@ -248,11 +244,10 @@
                 
                        h2 = document.querySelectorAll(".a2");
                        h3 = document.querySelectorAll(".a3");
-                      
-                 
+                                   
                        m2 = document.querySelectorAll(".b2");
                        m3 = document.querySelectorAll(".b3");
-             
+                         
                        l2 = document.querySelectorAll(".c2");
                        l3 = document.querySelectorAll(".c3");
                                              
