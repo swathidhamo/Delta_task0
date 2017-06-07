@@ -22,7 +22,7 @@
      
    </div>
   
-  <script type="text/javascript">
+   <script type="text/javascript">
                          
  //localStorage.clear();
   var sortnum = 0;
@@ -47,8 +47,6 @@
               var priorities;
               var deletebtn = "delnum" + i;
               var delet = "delet" + i;
-
-
          var i = 0;
          var ij;
         /* window.onload = function(){
@@ -84,10 +82,8 @@
                        var workSpace = document.getElementById("workspace");
                        newTitle.addEventListener("change",function(){
                          localStorage.setItem(name,newTitle.value)
-
                        })
                        newTitle.value = localStorage.getItem(name);
-
                        texts.push(name);
                        workSpace.appendChild(newTitle);
                          //to create the delete button
@@ -102,8 +98,7 @@
                                 var btn = document.getElementById(name);
                                 var omit = document.getElementById(del);
                                 var u = document.getElementById(sel);
-                                  //var y = document.getElementById(head);
-                                   // y.style.display = "none";
+                                 
                                     omit.style.display = "none";
                                     btn.style.display = "none";
                                     u.style.display = "none";
@@ -117,8 +112,6 @@
                                     // localStorage.clear(name);
                                      //localStorage.setItem(deletebtn,i);
                                 });
-
-
                                //to create the priority options
                                var select = document.createElement("select");
                                select.setAttribute("id",sel);
@@ -143,24 +136,23 @@
                         
                               select.addEventListener("change",function(){                         
                                var w = document.getElementById(name); 
-                               //var c = document.getElementById(head);
                                var d = document.getElementById(sel);
                                var k = document.getElementById(del);
                                //localStorage.setItem(colors,select.value);
                                select.value = localStorage.getItem(colors);
                       
-                               if(select.value === "1")
+                                if(select.value === "1")
                                  {
                                    w.className = "one";
-                                   //c.className = "a1";
-                                   d.className = "a2";
+      
+                                  d.className = "a2";
                                    k.className = "a3";
                                  
                                  }
                                  if(select.value === "2")
                                   {
                                     w.className = "two";
-                                    //c.className = "b1";
+      
                                     d.className = "b2";
                                     k.className = "b3";
                                    
@@ -168,7 +160,7 @@
                                  if(select.value === "3")
                                   {
                                       w.className = "three";
-                                     // c.className = "c1";
+            
                                       d.className = "c2";
                                       k.className = "c3";
                                       
@@ -177,20 +169,17 @@
                  
                                   select.value = localStorage.getItem(colors);
                                   var w = document.getElementById(name); 
-                                //  var c = document.getElementById(head);
                                   var d = document.getElementById(sel);
                                   var k = document.getElementById(del);
                               if(localStorage.getItem(colors)==="1")
                                  {
                                    w.className = "one";
-                                   //c.className = "a1";
                                    d.className = "a2";
                                    k.className = "a3";
                               }
                              if(localStorage.getItem(colors)==="2")
                              {
                                  w.className = "two";
-                                // c.className = "b1";
                                  d.className = "b2";
                                  k.className = "b3";
                   
@@ -198,23 +187,18 @@
                              if(localStorage.getItem(colors)==="3")
                             {
                                  w.className = "three";
-                                // c.className = "c1";
                                  d.className = "c2";
                                  k.className = "c3";
                   
                               }   
                               //localStorage.setItem(ij,i);  
-
                             
-
-
                               if(localStorage.getItem(delet)==="hi")
                               {
                                   var btn = document.getElementById(name);
                                   var omit = document.getElementById(del);
                                   var u = document.getElementById(sel);
-                                 // var y = document.getElementById(head);
-                                   // y.style.display = "none";
+                               
                                     omit.style.display = "none";
                                     btn.style.display = "none";
                                     u.style.display = "none";
@@ -222,27 +206,23 @@
                                     localStorage.setItem(colors,"");
                                     localStorage.removeItem(name);
                                     localStorage.removeItem(colors);
-
-
                                     clearInterval(po);
-
                               }
                               var po = setInterval(function() {
                          info = JSON.stringify(newTitle);
                          //localStorage.setItem(name, document.getElementById(name).value);
-                         localStorage.setItem(structure,info);
+                         //localStorage.setItem(structure,info);
                          //localStorage.setItem(colors,document.getElementById(sel).value);
-                         localStorage.setItem(sortn,sortnum);
+                         //localStorage.setItem(sortn,sortnum);
                          //localStorage.setItem(ipo,JSON.stringify(document.getElementById(head)));
-                         localStorage.setItem(deles,JSON.stringify(document.getElementById(del)));
-
-                         localStorage.setItem(ij,i);
+                         //localStorage.setItem(deles,JSON.stringify(document.getElementById(del)));
+                          localStorage.setItem(ij,i);
                          }, 1500);
                         //  document.getElementById(name).value = localStorage.getItem(name);
-            
+              
         
                i++;
-
+              // localStorage.setItem(ij,i);
      } 
                      //for the sorting
       
@@ -254,42 +234,37 @@
                        high = document.querySelectorAll(".one");
                        medium = document.querySelectorAll(".two");
                        low = document.querySelectorAll(".three");
-                       //var h1 = new Array();
                        var h2 = new Array();         
                        var h3 = new Array();
       
-                       //var m1 = new Array();
+           
                        var m2 = new Array();         
                        var m3 = new Array();
       
-                       //var l1 = new Array();
+                  
                        var l2 = new Array();         
                        var l3 = new Array();
      
-
-                      // h1 = document.querySelectorAll(".a1");
+                
                        h2 = document.querySelectorAll(".a2");
                        h3 = document.querySelectorAll(".a3");
                       
-                      // m1 = document.querySelectorAll(".b1");
+                 
                        m2 = document.querySelectorAll(".b2");
                        m3 = document.querySelectorAll(".b3");
-                      
-                      // l1 = document.querySelectorAll(".c1");
+             
                        l2 = document.querySelectorAll(".c2");
                        l3 = document.querySelectorAll(".c3");
                                              
                         for(m=0;m<high.length;m++)
                           {
                         workSpace.appendChild(high[m]);
-                        //workSpace.appendChild(h1[m]);
                         workSpace.appendChild(h2[m]);
                         workSpace.appendChild(h3[m]);
                           }
                         for(m=0;m<medium.length;m++)
                           {
                         workSpace.appendChild(medium[m]);
-                        //workSpace.appendChild(m1[m]);
                         workSpace.appendChild(m2[m]);
                         workSpace.appendChild(m3[m]); 
  
@@ -297,39 +272,25 @@
                         for(m=0;m<low.length;m++)
                           {
                          workSpace.appendChild(low[m]);
-                         //workSpace.appendChild(l1[m]);
                          workSpace.appendChild(l2[m]);
                          workSpace.appendChild(l3[m]);
                                     }
-                          sortnum++;                                                       
+                          sortnum++; 
+                          localStorage.setItem(sortn,sortnum);                                                      
              }
-
-
-
                          window.onload = function(){
                          for(var ki = 0;ki<localStorage.getItem(ij);ki++)
-
                            {
-                            
                                                        
                              newText();
-
-                             
-                             //document.getElementById(name).value = localStorage.getItem(name);
-
-                             
-                            //newText();
+                            
                            }
-
                            if(localStorage.getItem(sortn) > 0)
                             {
                               sort();
                               
                             }
-
                       }
-
-
                           //to create priority buttons
                         /*  var q= document.createElement("input");
                           q.setAttribute("id",head);
@@ -338,12 +299,8 @@
                           notes.push(head);
                           workSpace.appendChild(q);*/
                          //i = localStorage.getItem(ij); 
-
-
 /*
-
              window.onload = function(){
-
                              
                         for(var ki = 0;ki<localStorage.getItem(ij);ki++)
                         {
@@ -356,7 +313,6 @@
                         //alert(conts.id);
                         var workSpace = document.getElementById("workspace");
                         workSpace.appendChild(conts);
-
                         var impor = document.createElement("select");
                         var btns = JSON.parse(localStorage.getItem("delnum"+ki));
                         impor.innerHTML = btns;
@@ -375,24 +331,18 @@
                           impor.id = "Select"+ ki;
                           impor.value = localStorage.getItem("colors"+ki);
                         workSpace.appendChild(impor);
-
-
                           var cd = document.createElement("input");
                           cd.type = "submit";
                           cd.innerHTML = JSON.parse(localStorage.getItem("del_btn"+ki));
                           cd.value = "Delete";
                           cd.id = "delbtn" + ki;
                           workSpace.appendChild(cd);
-
-
-
                           var ab = document.createElement("input");
                           ab.type = "submit";
                           ab.innerHTML = JSON.parse(localStorage.getItem("prio_btn"+ki));
                           ab.value = "Priority";
                           ab.id = "note" + ki;
                           workSpace.appendChild(ab);
-
                           /*ab.addEventListener('click',function pe(){
                                                     
                            
@@ -423,9 +373,6 @@
                               
                               }
                            });
-
-
-
                         if(localStorage.getItem("colors"+ki)==="1")
                         {
                                 conts.className = "one";
@@ -450,29 +397,18 @@
                   
                               } 
                          
-
-
                     
-
                        //i = localStorage.getItem(ij);
-
-
-
 //                     
-
-
-
-
                       }
-
                       }
                  
-
                 
                  */
          
       
   </script>
+
 
 
 </body>
